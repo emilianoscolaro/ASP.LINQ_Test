@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ASP.LINQ_Test.Models.area>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de areas</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.are_des)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.are_des)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.are_cod }) |
+            @Html.ActionLink("Details", "Detalles", new { id=item.are_cod }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.are_cod })
+        </td>
+    </tr>
+}
+
+</table>
